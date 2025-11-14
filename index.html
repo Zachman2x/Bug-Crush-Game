@@ -15,7 +15,7 @@
     <button class="btn" id="start-btn">Play Game</button>
   </div>
 
-  <!-- Screen 1 -->
+  <!-- Screen 1: Choose insect -->
   <div class="screen">
     <h1>What is your "favorite" insect?</h1>
 
@@ -26,21 +26,18 @@
           <img src="http://pngimg.com/uploads/fly/fly_PNG3946.png" alt="fly" />
         </button>
       </li>
-
       <li>
         <button class="choose-insect-btn">
           <p>Mosquito</p>
           <img src="http://pngimg.com/uploads/mosquito/mosquito_PNG18175.png" alt="mosquito" />
         </button>
       </li>
-
       <li>
         <button class="choose-insect-btn">
           <p>Spider</p>
           <img src="http://pngimg.com/uploads/spider/spider_PNG12.png" alt="spider" />
         </button>
       </li>
-
       <li>
         <button class="choose-insect-btn">
           <p>Roach</p>
@@ -50,7 +47,21 @@
     </ul>
   </div>
 
-  <!-- Screen 2 - Game Container -->
+  <!-- Screen 2: STORE -->
+  <div class="screen" id="store-screen">
+    <h1>Bug Hunter Store</h1>
+
+    <div class="store-item">
+      <h3>Fly Swatter (AOE)</h3>
+      <p>Cost: 15 points</p>
+      <button class="btn" id="buy-swat">Buy</button>
+      <p id="swat-status" class="item-status"></p>
+    </div>
+
+    <button class="btn" id="continue-to-game">Continue to Game</button>
+  </div>
+
+  <!-- Screen 3: GAME -->
   <div class="screen game-container" id="game-container">
     <h3 id="time" class="time">Time: 00:00</h3>
     <h3 id="score" class="score">Score: 0</h3>
@@ -63,6 +74,10 @@
     <button id="restart-btn" class="btn restart-btn" style="display:none;">
       Restart Game
     </button>
+
+    <button id="store-btn" class="btn restart-btn" style="display:none;">
+      Go to Store
+    </button>
   </div>
 </body>
-</html>
+</html

@@ -27,6 +27,10 @@ body {
   opacity: 0.9;
 }
 
+.btn:focus {
+  outline: 0;
+}
+
 .screen {
   display: flex;
   flex-direction: column;
@@ -37,9 +41,23 @@ body {
   transition: margin 0.5s ease-out;
 }
 
-/* FIXED: Was -200vh */
+/* Correct scroll distance */
 .screen.up {
   margin-top: -100vh;
+}
+
+.choose-insect-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+a {
+  color: #fff;
+}
+
+h1 {
+  line-height: 1.4;
 }
 
 .insects-list {
@@ -64,15 +82,13 @@ body {
   height: 150px;
 }
 
-.choose-insect-btn img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-}
-
 .choose-insect-btn:hover {
   background-color: white;
   color: #516dff;
+}
+
+.choose-insect-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .time, .score {
@@ -126,4 +142,17 @@ body {
 
 .restart-btn {
   margin-top: 200px;
+}
+
+/* Store item */
+.store-item {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.item-status {
+  margin-top: 10px;
 }
