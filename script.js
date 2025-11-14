@@ -5,10 +5,12 @@ const gameContainer = document.getElementById('game-container');
 const timeEl = document.getElementById('time');
 const scoreEl = document.getElementById('score');
 const message = document.getElementById('message');
+const restartBtn = document.getElementById('restart-btn');
 
 let seconds = 0;
 let score = 0;
 let selectedInsect = {};
+let timeInterval;
 
 startBtn.addEventListener('click', () => {
     screens[0].classList.add('up');
@@ -24,7 +26,6 @@ chooseInsectBtns.forEach(btn => {
 
         screens[1].classList.add('up');
 
-        // Small delay so screen animation finishes first
         setTimeout(() => {
             startGame();
             createInsect();
@@ -33,7 +34,7 @@ chooseInsectBtns.forEach(btn => {
 });
 
 function startGame() {
-    setInterval(increaseTime, 1000);
+    timeInterval = setInterval(increaseTime, 1000);
 }
 
 function increaseTime() {
@@ -69,7 +70,6 @@ function getRandomLocation() {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    // Keeps insects away from edges
     const x = Math.random() * (width - 200) + 100;
     const y = Math.random() * (height - 200) + 100;
 
@@ -95,5 +95,29 @@ function increaseScore() {
 
     if (score > 19) {
         message.classList.add('visible');
+        restartBtn.style.display = 'block';
     }
+}
+
+
+restartBtn.addEventListener('click', restartGame);
+
+function restartGame() {
+    // Reset variables
+    seconds = 0;
+    score = 0;
+
+    timeEl.innerHTML = "Time: 00:00";
+    scoreEl.innerHTML = "Score: 0";
+    message.classList.remove('visible');
+    restartBtn.style.display = "none";
+
+    // Stop timer
+    clearInterval(timeInterval);
+
+    // Remove all insects
+    document.querySelectorAll('.insect').forEach(e => e.remove());
+
+    // Reset screen positions
+    screens.forEach(screen => screen.classList.remove('up'));
 }

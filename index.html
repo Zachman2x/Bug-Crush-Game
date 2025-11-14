@@ -9,11 +9,13 @@
 </head>
 
 <body>
+  <!-- Screen 0 -->
   <div class="screen">
     <h1>Catch The Insect</h1>
     <button class="btn" id="start-btn">Play Game</button>
   </div>
 
+  <!-- Screen 1 -->
   <div class="screen">
     <h1>What is your "favorite" insect?</h1>
 
@@ -48,6 +50,7 @@
     </ul>
   </div>
 
+  <!-- Screen 2 - Game Container -->
   <div class="screen game-container" id="game-container">
     <h3 id="time" class="time">Time: 00:00</h3>
     <h3 id="score" class="score">Score: 0</h3>
@@ -56,6 +59,10 @@
       Are you annoyed yet? <br>
       You are playing an impossible game!
     </h5>
+
+    <button id="restart-btn" class="btn restart-btn" style="display:none;">
+      Restart Game
+    </button>
   </div>
 </body>
 </html>
